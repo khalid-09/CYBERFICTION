@@ -1,0 +1,45 @@
+* {
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: gilroy;
+}
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+#main {
+    position: relative;
+    overflow: hidden;
+}
+#page {
+    /* position: relative; */
+    height: 100vh;
+    width: 100vw;
+    background-color: #111;
+}
+#page1 {
+    /* position: relative; */
+    height: 100vh;
+    width: 100vw;
+    background-color: red;
+}
+#page2 {
+    /* position: relative; */
+    height: 100vh;
+    width: 100vw;
+    background-color: green;
+}
+#page3 {
+    /* position: relative; */
+    height: 100vh;
+    width: 100vw;
+    background-color: indigo;
+}
+canvas {
+    position: relative;
+    z-index: 9;
+    max-width: 100vw;
+    max-height: 100vh;
+}
