@@ -1,4 +1,4 @@
-function locomotive() {
+const locomotive = function () {
     gsap.registerPlugin(ScrollTrigger);
 
     const locoScroll = new LocomotiveScroll({
@@ -29,7 +29,7 @@ function locomotive() {
     });
     ScrollTrigger.addEventListener('refresh', () => locoScroll.update());
     ScrollTrigger.refresh();
-}
+};
 locomotive();
 
 const canvas = document.querySelector('canvas');
@@ -44,8 +44,8 @@ window.addEventListener('resize', function () {
     render();
 });
 
-function files(index) {
-    var data = `
+const files = function (index) {
+    const data = `
  ./imgs/male0001.png
  ./imgs/male0002.png
  ./imgs/male0003.png
@@ -348,7 +348,7 @@ function files(index) {
  ./imgs/male0300.png
 `;
     return data.split('\n')[index];
-}
+};
 
 const frameCount = 300;
 
@@ -384,12 +384,12 @@ function render() {
 }
 
 function scaleImage(img, ctx) {
-    var canvas = ctx.canvas;
-    var hRatio = canvas.width / img.width;
-    var vRatio = canvas.height / img.height;
-    var ratio = Math.max(hRatio, vRatio);
-    var centerShift_x = (canvas.width - img.width * ratio) / 2;
-    var centerShift_y = (canvas.height - img.height * ratio) / 2;
+    const canvas = ctx.canvas;
+    const hRatio = canvas.width / img.width;
+    const vRatio = canvas.height / img.height;
+    const ratio = Math.max(hRatio, vRatio);
+    const centerShift_x = (canvas.width - img.width * ratio) / 2;
+    const centerShift_y = (canvas.height - img.height * ratio) / 2;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.drawImage(
         img,
@@ -406,36 +406,36 @@ function scaleImage(img, ctx) {
 ScrollTrigger.create({
     trigger: '#page>canvas',
     pin: true,
-    // markers:true,
+    // markers: true,
     scroller: `#main`,
     start: `top top`,
     end: `600% top`,
 });
 
-// gsap.to('#page1', {
-//     scrollTrigger: {
-//         trigger: `#page1`,
-//         start: `top top`,
-//         end: `bottom top`,
-//         pin: true,
-//         scroller: `#main`,
-//     },
-// });
-// gsap.to('#page2', {
-//     scrollTrigger: {
-//         trigger: `#page2`,
-//         start: `top top`,
-//         end: `bottom top`,
-//         pin: true,
-//         scroller: `#main`,
-//     },
-// });
-// gsap.to('#page3', {
-//     scrollTrigger: {
-//         trigger: `#page3`,
-//         start: `top top`,
-//         end: `bottom top`,
-//         pin: true,
-//         scroller: `#main`,
-//     },
-// });
+gsap.to('#page1', {
+    scrollTrigger: {
+        trigger: `#page1`,
+        start: `top top`,
+        end: `bottom top`,
+        pin: true,
+        scroller: `#main`,
+    },
+});
+gsap.to('#page2', {
+    scrollTrigger: {
+        trigger: `#page2`,
+        start: `top top`,
+        end: `bottom top`,
+        pin: true,
+        scroller: `#main`,
+    },
+});
+gsap.to('#page3', {
+    scrollTrigger: {
+        trigger: `#page3`,
+        start: `top top`,
+        end: `bottom top`,
+        pin: true,
+        scroller: `#main`,
+    },
+});
